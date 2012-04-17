@@ -221,7 +221,7 @@ namespace :rawr do
         FileUtils.mkdir_p(File.dirname("#{CONFIG.compile_dir}/#{processed_file}"))
 
         sh "dubyc -J-classpath #{directory}/#{filename}"
-        File.move("#{directory}/#{processed_file}", "#{CONFIG.compile_dir}/#{processed_file}")
+        FileUtils.mv("#{directory}/#{processed_file}", "#{CONFIG.compile_dir}/#{processed_file}")
       end
     end
   end

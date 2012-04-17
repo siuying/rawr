@@ -1567,7 +1567,7 @@ module Zip
       tmpFilename = tmpfile.path
       tmpfile.close
       if yield tmpFilename
-	File.move(tmpFilename, name)
+	      FileUtils.mv(tmpFilename, name)
       end
     end
     
